@@ -2,28 +2,30 @@ import styles from './styles.module.scss';
 import Image from 'next/image';
 import logo from '../../../public/images/logo.svg';
 
-import Link from 'next/link';
+import ActiveLink from '../ActiveLink';
 
 export default function Header() {
     return (
         <header className={styles.headerContainer}>
             <div className={styles.headerContent}>
-                <a>
+                <ActiveLink activeClassName={styles.active} href="/">
+                    <a>
                     <Image src={logo} alt='Sujeito Programador Logo'/>
-                </a>
+                    </a>
+                </ActiveLink>
 
                 <nav>
-                    <Link legacyBehavior href='/'>
+                    <ActiveLink activeClassName={styles.active} href='/'>
                         <a>Home</a>
-                    </Link>
+                    </ActiveLink>
 
-                    <Link legacyBehavior href='/posts'>
+                    <ActiveLink activeClassName={styles.active} href='/posts'>
                         <a>Conteúdos</a>
-                    </Link>
+                    </ActiveLink>
 
-                    <Link legacyBehavior href='/sobre'>
+                    <ActiveLink activeClassName={styles.active} href='/sobre'>
                         <a>Quem somos</a>
-                    </Link>
+                    </ActiveLink>
                 </nav>
 
                 <a className={styles.readyButton} type='button' href='https://sujeitoprogramador.com'>Começar</a>
